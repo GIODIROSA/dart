@@ -18,10 +18,33 @@ void main() {
   const String constante = "En tiempo de compilación";
   const int constanteNumero = 1987;
 
-  //dynamic type
+  //dynamic type == null acepta nulo
   //un tipo de datos que debemos aprender a dónde usarlo y dónde no
 
-  
+  dynamic errorMessage = 'Hola'; //null por default
+  errorMessage = true;
+  errorMessage = [1, 2, 3, 4, 5];
+  errorMessage = {1, 2, 3, 4, 5};
+  errorMessage = () => true;
+  errorMessage = null;
+
+  //debería haber un error pero lo permite
+  //errorMessage += 1;
+
+  //Maps
+  final Map<String, dynamic> pokemons = {
+    'name': 'Ditto',
+    'hp': 100,
+    'isAlive': true,
+    'abilities': <String>['impostor'],
+    'sprites': {1: 'ditto/front.png', 2: 'ditto/back.png'},
+  };
+
+  final pokemons2 = {1: 'Abc', 2: 'xyz', 3: 123};
+
+
+  print('Name: ${pokemons['name']}');
+  print('Name: ${pokemons['sprites']}');
 
   // String multi variable
   print("""
@@ -34,6 +57,14 @@ void main() {
   $variableNumero
   $constante
   $constanteNumero
+  $errorMessage
+  ******
+  $pokemons
+  ******
+  $pokemons2
 
   """);
+
+
+
 }
